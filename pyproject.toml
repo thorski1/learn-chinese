@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "learn-chinese"
+version = "1.0.0"
+description = "An interactive terminal game that teaches Mandarin Chinese from beginner level — pinyin, greetings, numbers, food, family, daily life, travel, and culture."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "thorski1" }]
+keywords = [
+    "terminal", "game", "chinese", "mandarin", "language", "learning",
+    "pinyin", "education", "cli",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment :: Role-Playing",
+    "Topic :: Education",
+    "Topic :: Terminals",
+]
+dependencies = [
+    "rich>=13.0.0",
+    "quest-engine>=1.5.0",
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.20.0",
+    "jinja2>=3.0.0",
+    "python-multipart>=0.0.6",
+]
+
+[project.urls]
+Homepage      = "https://github.com/thorski1/learn-chinese"
+Repository    = "https://github.com/thorski1/learn-chinese"
+"Bug Tracker" = "https://github.com/thorski1/learn-chinese/issues"
+
+[project.scripts]
+learn-chinese          = "learn_chinese.main:main_chinese"
+pinyin-quest           = "learn_chinese.main:main_pinyin"
+greetings-quest        = "learn_chinese.main:main_greetings"
+numbers-chinese-quest  = "learn_chinese.main:main_numbers_chinese"
+food-drink-quest       = "learn_chinese.main:main_food_drink"
+family-quest           = "learn_chinese.main:main_family"
+daily-life-quest       = "learn_chinese.main:main_daily_life"
+travel-quest           = "learn_chinese.main:main_travel"
+culture-quest          = "learn_chinese.main:main_culture"
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["learn_chinese*"]
+
+[tool.setuptools.package-data]
+learn_chinese = ["skill-packs/**/*.py"]
