@@ -28,7 +28,7 @@ _WEB = "--web" in sys.argv
 
 CHINESE_PACKS = [
     "pinyin", "greetings", "numbers_chinese", "food_drink",
-    "family", "daily_life", "travel", "culture", "colors_shapes", "weather_time",
+    "family", "daily_life", "travel", "culture", "colors_shapes", "weather_time", "body_health",
 ]
 
 
